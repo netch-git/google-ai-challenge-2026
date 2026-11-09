@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Antigravityと駆け抜けた37日間の狂騒曲 ＆ Google AI Challenge 応募完全戦略書</title>
+  <title>Antigravity 37日間の開発実践録 ＆ Google AI Challenge 応募戦略書</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-paper: #f9f7f1;
+      --bg-paper: #fbf9f4;
       --bg-surface: #ffffff;
-      --grid-line: rgba(160, 150, 130, 0.13);
-      --ink-sumi: #1e2229;
-      --ink-muted: #5a606d;
+      --grid-line: rgba(160, 150, 130, 0.12);
+      --ink-sumi: #1a1e24;
+      --ink-muted: #4e5564;
       --ink-vermilion: #c5352b;
       --ink-indigo: #1b4d89;
-      --ink-forest: #2a6844;
-      --border-soft: rgba(140, 130, 110, 0.25);
+      --ink-forest: #226744;
+      --border-soft: rgba(140, 130, 110, 0.28);
       --font-mincho: 'Shippori Mincho', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
       --font-sans: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif;
       --font-mono: 'JetBrains Mono', Consolas, monospace;
@@ -39,18 +39,18 @@
       font-family: var(--font-sans);
       font-size: 15px;
       line-height: 1.85;
-      padding: 30px 16px 80px;
+      padding: 36px 16px 80px;
       -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 920px;
+      max-width: 900px;
       margin: 0 auto;
-      background: #fffdf9;
+      background: var(--bg-surface);
       padding: 48px 56px;
       border: 1px solid var(--border-soft);
-      box-shadow: 0 4px 20px rgba(120, 110, 90, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
-      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(100, 90, 70, 0.06);
+      border-radius: 2px;
       position: relative;
     }
 
@@ -58,59 +58,58 @@
       content: "";
       position: absolute;
       top: 0;
-      left: 36px;
-      right: 36px;
-      height: 4px;
-      background: repeating-linear-gradient(90deg, var(--ink-vermilion) 0, var(--ink-vermilion) 16px, transparent 16px, transparent 24px);
-      opacity: 0.7;
+      left: 40px;
+      right: 40px;
+      height: 3px;
+      background: var(--ink-indigo);
+      opacity: 0.85;
     }
 
-    /* ヘッダー */
     header {
-      margin-bottom: 40px;
+      margin-bottom: 36px;
       padding-bottom: 24px;
-      border-bottom: 2px dashed var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
     }
 
     .header-badge {
       display: inline-block;
       font-family: var(--font-mono);
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 600;
-      letter-spacing: 0.08em;
-      color: var(--ink-vermilion);
-      background: rgba(197, 53, 43, 0.08);
-      padding: 4px 10px;
+      letter-spacing: 0.06em;
+      color: var(--ink-indigo);
+      background: rgba(27, 77, 137, 0.07);
+      padding: 3px 9px;
       border-radius: 2px;
       margin-bottom: 12px;
-      border-left: 3px solid var(--ink-vermilion);
+      border-left: 3px solid var(--ink-indigo);
     }
 
     h1 {
       font-family: var(--font-mincho);
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 800;
-      line-height: 1.35;
+      line-height: 1.4;
       color: var(--ink-sumi);
-      margin-bottom: 14px;
-      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+      letter-spacing: 0.01em;
     }
 
     .subtitle {
-      font-size: 15px;
+      font-size: 14.5px;
       color: var(--ink-muted);
       font-feature-settings: "palt";
     }
 
     .meta-box {
-      margin-top: 20px;
+      margin-top: 18px;
       display: flex;
       flex-wrap: wrap;
-      gap: 12px 20px;
+      gap: 12px 24px;
       font-family: var(--font-mono);
       font-size: 12px;
       color: var(--ink-muted);
-      background: #fbf9f4;
+      background: #faf8f2;
       padding: 10px 16px;
       border: 1px solid var(--border-soft);
       border-radius: 2px;
@@ -119,33 +118,30 @@
       color: var(--ink-sumi);
     }
 
-    /* 目次 */
     .toc-card {
-      background: #fbf9f4;
-      border-left: 4px solid var(--ink-indigo);
-      padding: 20px 24px;
-      margin: 30px 0 44px;
-      border-radius: 0 4px 4px 0;
+      background: #faf8f2;
+      border-left: 3px solid var(--ink-indigo);
+      padding: 18px 22px;
+      margin: 28px 0 40px;
+      border-radius: 0 2px 2px 0;
     }
     .toc-title {
       font-family: var(--font-mincho);
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--ink-indigo);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .toc-list {
       list-style: none;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 8px 16px;
+      gap: 6px 16px;
     }
     .toc-list a {
       color: var(--ink-sumi);
       text-decoration: none;
       font-size: 13.5px;
-      display: flex;
-      align-items: center;
       transition: color 0.15s;
     }
     .toc-list a:hover {
@@ -153,124 +149,102 @@
       text-decoration: underline;
     }
     .toc-list a::before {
-      content: "§";
+      content: "―";
       color: var(--ink-indigo);
-      font-family: var(--font-mincho);
       margin-right: 6px;
-      font-weight: bold;
     }
 
-    /* 見出し装飾 */
     h2 {
       font-family: var(--font-mincho);
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 700;
       color: var(--ink-sumi);
-      margin: 48px 0 20px;
-      padding-bottom: 8px;
-      border-bottom: 1.5px solid var(--ink-sumi);
+      margin: 44px 0 18px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--ink-sumi);
       display: flex;
       align-items: center;
     }
     h2::before {
       content: "";
       display: inline-block;
-      width: 8px;
-      height: 20px;
+      width: 4px;
+      height: 18px;
       background: var(--ink-vermilion);
-      margin-right: 12px;
-      border-radius: 1px;
+      margin-right: 10px;
     }
 
     h3 {
       font-family: var(--font-mincho);
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
       color: var(--ink-indigo);
-      margin: 32px 0 14px;
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-    }
-
-    h4 {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--ink-sumi);
-      margin: 20px 0 8px;
+      margin: 28px 0 12px;
     }
 
     p {
-      margin-bottom: 1.4em;
+      margin-bottom: 1.3em;
       text-align: justify;
     }
 
-    /* 画像ブロック */
     .figure-block {
-      margin: 28px 0 36px;
-      background: #fbf9f4;
-      padding: 14px;
+      margin: 24px 0 32px;
+      background: #faf8f2;
+      padding: 16px;
       border: 1px solid var(--border-soft);
-      border-radius: 3px;
+      border-radius: 2px;
       text-align: center;
     }
     .figure-block img {
       max-width: 100%;
       height: auto;
-      border-radius: 2px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-soft);
+      background: #ffffff;
       display: block;
       margin: 0 auto;
     }
     .figure-caption {
       margin-top: 10px;
-      font-size: 13px;
+      font-size: 12.5px;
       color: var(--ink-muted);
       font-family: var(--font-mono);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
     }
     .figure-caption::before {
-      content: "▲";
-      color: var(--ink-vermilion);
-      font-size: 9px;
+      content: "図：";
+      color: var(--ink-indigo);
+      font-weight: 600;
     }
 
-    /* テーブル */
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 20px 0 30px;
+      margin: 18px 0 28px;
       font-size: 13.5px;
       background: #ffffff;
       border: 1px solid var(--border-soft);
     }
     th, td {
-      padding: 10px 14px;
+      padding: 9px 13px;
       border: 1px solid var(--border-soft);
       text-align: left;
     }
     th {
-      background: #f3efe6;
+      background: #f4f0e6;
       font-family: var(--font-mincho);
       font-weight: 700;
       color: var(--ink-sumi);
     }
     tr:nth-child(even) {
-      background: #fdfcf9;
+      background: #fdfbf7;
     }
 
-    /* プロジェクトカード */
     .project-card {
-      background: #fffefb;
+      background: #ffffff;
       border: 1px solid var(--border-soft);
       border-top: 3px solid var(--ink-indigo);
       padding: 24px 28px;
-      margin: 36px 0;
-      border-radius: 0 0 3px 3px;
-      box-shadow: 0 2px 8px rgba(100, 90, 70, 0.04);
+      margin: 32px 0;
+      border-radius: 0 0 2px 2px;
     }
     .project-card.family {
       border-top-color: var(--ink-vermilion);
@@ -286,33 +260,32 @@
       padding: 2px 8px;
       border-radius: 2px;
       margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
     }
     .project-card .project-tag {
-      background: rgba(27, 77, 137, 0.1);
+      background: rgba(27, 77, 137, 0.08);
       color: var(--ink-indigo);
     }
     .project-card.family .project-tag {
-      background: rgba(197, 53, 43, 0.1);
+      background: rgba(197, 53, 43, 0.08);
       color: var(--ink-vermilion);
     }
     .project-card.planet .project-tag {
-      background: rgba(42, 104, 68, 0.1);
+      background: rgba(34, 103, 68, 0.08);
       color: var(--ink-forest);
     }
 
     .project-title {
       font-family: var(--font-mincho);
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 700;
       color: var(--ink-sumi);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .project-meta {
-      font-size: 12.5px;
+      font-size: 12px;
       color: var(--ink-muted);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       font-family: var(--font-mono);
     }
 
@@ -327,54 +300,50 @@
       gap: 6px;
     }
     .section-label::before {
-      content: "▪";
-      color: var(--ink-vermilion);
+      content: "■";
+      color: var(--ink-indigo);
+      font-size: 10px;
     }
 
-    /* 絵コンテテーブル */
     .storyboard-table {
-      margin-top: 10px;
-      font-size: 13px;
+      margin-top: 8px;
+      font-size: 12.5px;
     }
     .storyboard-table th:first-child {
-      width: 75px;
+      width: 70px;
       text-align: center;
     }
     .storyboard-table td:first-child {
       font-family: var(--font-mono);
       text-align: center;
       font-weight: 600;
-      color: var(--ink-vermilion);
+      color: var(--ink-indigo);
     }
 
-    /* 作文スタイル */
     .essay-section {
-      background: #fdfaf3;
-      padding: 32px 36px;
-      border-left: 3px solid var(--ink-vermilion);
-      margin: 28px 0;
-      border-radius: 0 4px 4px 0;
+      background: #faf8f2;
+      padding: 28px 32px;
+      border-left: 2px solid var(--ink-indigo);
+      margin: 24px 0;
     }
     .essay-act-title {
       font-family: var(--font-mincho);
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
-      color: var(--ink-vermilion);
-      margin-bottom: 12px;
+      color: var(--ink-sumi);
+      margin-bottom: 10px;
     }
     .essay-p {
-      font-family: var(--font-mincho);
-      font-size: 15.5px;
-      line-height: 2.0;
-      color: #242930;
-      margin-bottom: 1.6em;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: var(--ink-sumi);
+      margin-bottom: 1.4em;
       text-indent: 1em;
     }
 
-    /* フッター */
     footer {
-      margin-top: 60px;
-      padding-top: 24px;
+      margin-top: 56px;
+      padding-top: 20px;
       border-top: 1px solid var(--border-soft);
       text-align: center;
       font-size: 12px;
@@ -384,22 +353,22 @@
 
     @media (max-width: 768px) {
       body {
-        padding: 12px 8px 40px;
+        padding: 12px 8px 36px;
       }
       .container {
-        padding: 24px 20px;
+        padding: 24px 18px;
       }
       h1 {
-        font-size: 22px;
+        font-size: 21px;
       }
       h2 {
         font-size: 18px;
       }
       .project-card {
-        padding: 18px 16px;
+        padding: 16px 14px;
       }
       .essay-section {
-        padding: 20px 18px;
+        padding: 18px 16px;
       }
     }
   </style>
@@ -408,163 +377,160 @@
 
   <div class="container">
     <header>
-      <div class="header-badge">Google Japan 25th Anniversary / AI Challenge Strategic Dossier</div>
-      <h1>Antigravityと駆け抜けた37日間の狂騒曲<br><span style="font-size: 0.85em; font-weight: 600; color: var(--ink-indigo);">＆ Google AI Challenge 応募完全戦略書</span></h1>
-      <p class="subtitle">学術論文・手書き採点・オープンデータ・Kaggle・家庭の歴史を束ねた自律エージェント開発記録</p>
+      <div class="header-badge">Google Japan 25th Anniversary / AI Challenge Development Record</div>
+      <h1>Antigravity 37日間の開発実践録<br><span style="font-size: 0.85em; font-weight: 600; color: var(--ink-indigo);">自律エージェント協働が切り拓いた知能化と自動化の軌跡</span></h1>
+      <p class="subtitle">学術統計・記述採点・公的オープンデータ・先端コンペ・生活史を統合した7,542ファイルの開発全記録</p>
       
       <div class="meta-box">
-        <span>導入初日: <strong>2026-10-04 13:55 JST</strong></span>
-        <span>確定日時: <strong>2026-11-09 09:00 JST</strong></span>
-        <span>経過日数: <strong>満36日間（第37日目）</strong></span>
+        <span>開発開始: <strong>2026年10月04日 13:55 JST</strong></span>
+        <span>確定日時: <strong>2026年11月09日 16:40 JST</strong></span>
+        <span>経過期間: <strong>満36日間（第37日目）</strong></span>
         <span>総資産数: <strong>7,542 Files</strong></span>
       </div>
     </header>
 
     <div class="toc-card">
-      <div class="toc-title">目次 / INDEX</div>
+      <div class="toc-title">目次 / CONTENTS</div>
       <ul class="toc-list">
-        <li><a href="#sec-audit">第1部：導入日数とプロジェクト資産 精査証明</a></li>
-        <li><a href="#sec-essay">第2部：年代記作文『37日間の狂騒曲』</a></li>
-        <li><a href="#sec-awards">第3部：Google AI Challenge 全7応募戦略</a></li>
-        <li><a href="#p1">PJ-1: Examini（手書きルーブリック採点）</a></li>
-        <li><a href="#p2">PJ-2: GAS 200本ノック（オープンデータ同期）</a></li>
-        <li><a href="#p3">PJ-3: Kaggle AI Copilot & Gemmaエージェント</a></li>
+        <li><a href="#sec-audit">第1章：導入日数とプロジェクト資産の精査</a></li>
+        <li><a href="#sec-essay">第2章：開発実践録（37日間の歩みと知見）</a></li>
+        <li><a href="#sec-awards">第3章：Google AI Challenge 全7応募戦略</a></li>
+        <li><a href="#p1">PJ-1: Examini（記述・論述ルーブリック採点）</a></li>
+        <li><a href="#p2">PJ-2: GAS 200本ノック（公的データ自律同期）</a></li>
+        <li><a href="#p3">PJ-3: Kaggle AI Copilot & Gemma自律エージェント</a></li>
         <li><a href="#p4">PJ-4: World-Pulse-Chronicle（統合ダッシュボード）</a></li>
         <li><a href="#p5">PJ-5: リアルタイム防災＆農業気象インサイト</a></li>
         <li><a href="#p6">PJ-6: Family Chronicle（写真で紡ぐ家庭の歴史）</a></li>
         <li><a href="#p7">PJ-7: ほぼ日手帳風エディトリアル・ライフログ</a></li>
-        <li><a href="#sec-aesthetics">第4部：AESTHETICS-LAB 準拠プロンプト体系</a></li>
+        <li><a href="#sec-aesthetics">第4章：視覚表現仕様（0.35mm 4色線描原則）</a></li>
       </ul>
     </div>
 
-    <!-- 第1部 -->
+    <!-- 第1章 -->
     <section id="sec-audit">
-      <h2>第1部：導入日数とプロジェクト資産 精査証明書</h2>
-      <p>ユーザーのGoogle Drive環境（<code>G:\マイドライブ\antigravity</code>）およびリモート環境（<code>antigravity/remote</code>）を精査した結果、導入開始は <strong>2026年10月04日 13時55分07秒</strong>（最初のスクリプト <code>00_inspect_columns.py</code> の生成時刻）であり、本日 <strong>2026年11月09日</strong> 現在で <strong>第37日目（満36日間）</strong> を迎えていることが確定しました。</p>
+      <h2>第1章：導入日数とプロジェクト資産の精査</h2>
+      <p>Google Antigravity環境（ローカル `G:\マイドライブ\antigravity` および常時稼働環境 `antigravity/remote`）の全ファイルを網羅的に監査した結果、開発着手は <strong>2026年10月04日 13時55分07秒</strong>（最初のスクリプト <code>00_inspect_columns.py</code> の生成時刻）であり、本日 <strong>2026年11月09日</strong> 現在で <strong>満36日間（第37日目）</strong> が経過していることが確定しました。</p>
 
       <table>
         <thead>
           <tr>
-            <th>ディレクトリ名</th>
+            <th>管理ディレクトリ</th>
             <th>ファイル数</th>
-            <th>主要プロジェクトと役割</th>
+            <th>主たる機能領域と成果物</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong><code>Notebook/</code></strong></td>
             <td><strong>4,098</strong></td>
-            <td>資格学習（IPA、気象予報士、統計検定）、GAS 200本ノック、ほぼ日手帳ライフログ、オープンデータ</td>
+            <td>資格学習（情報処理技術者・気象予報士・統計検定）、GAS 200本ノック、オープンデータ分析</td>
           </tr>
           <tr>
             <td><strong><code>kaggle/</code></strong></td>
             <td><strong>2,378</strong></td>
-            <td>先端AIコンペ（創薬CASMI、量子回路コンパイル、Gemma 4自律エージェント、LLM識別）</td>
+            <td>先端AIコンペ（創薬CASMI、量子回路コンパイル、Gemma 4自律エージェント、LLM挙動識別）</td>
           </tr>
           <tr>
             <td><strong><code>IDM/</code></strong></td>
             <td><strong>688</strong></td>
-            <td>導入初期から続く学術論文・官公庁統計・実態調査データの統計モデリング・監査ログ</td>
+            <td>学術論文・官公庁統計データ・実態調査データの統計モデリングおよび検証監査ログ</td>
           </tr>
           <tr>
             <td><strong><code>scripts/</code></strong></td>
             <td><strong>174</strong></td>
-            <td>Gemini 4 Argon共通呼出ランナー、監査ロガー、文体計量チェッカー、自動同期スクリプト</td>
+            <td>Gemini 4 Argon共通呼出ランナー、散文計量文体監査ツール、自動同期スクリプト群</td>
           </tr>
           <tr>
             <td><strong><code>apps/</code></strong></td>
             <td><strong>119</strong></td>
-            <td>Family Chronicle、Takeoutポータル、ほぼ日手帳ビューア、Webデザインカタログ</td>
+            <td>Family Chronicle、Takeoutデータポータル、Cloudflare Pages配備資材</td>
           </tr>
           <tr>
             <td><strong><code>logs/</code></strong></td>
             <td><strong>91</strong></td>
-            <td>TOON形式日次ログ、Weeklyサマリー、Cloudflareデプロイ監視、Remote移行同期ログ</td>
+            <td>TOON形式日次監査ログ、Weeklyサマリー、Remote移行同期ログ</td>
           </tr>
           <tr>
-            <td><strong>その他基盤</strong></td>
+            <td><strong>環境基盤</strong></td>
             <td><strong>94</strong></td>
-            <td>サービスアカウント認証情報、Skills、Docs、Cloudflare Wrangler構成</td>
+            <td>サービスアカウント認証鍵、Skills定義、Cloudflare Wrangler構成定義</td>
           </tr>
-          <tr style="background: #fbf5ea; font-weight: bold;">
+          <tr style="background: #faf6ed; font-weight: bold;">
             <td>合 計</td>
             <td>7,542</td>
-            <td>37日間で産出された総ファイル数</td>
+            <td>37日間に生成・運用された総ファイル数</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <!-- 第2部 -->
+    <!-- 第2章 -->
     <section id="sec-essay">
-      <h2>第2部：面白おかしい年代記作文</h2>
-      <h3 style="color: var(--ink-sumi);">『Antigravityと駆け抜けた37日間の狂騒曲 〜Excel恐怖症の男と、暴走する知能と、トモエリバーの奇跡〜』</h3>
+      <h2>第2章：開発実践録（37日間の歩みと技術的洞察）</h2>
+      <h3 style="color: var(--ink-sumi);">『知能との協働がもたらした自律開発の地平』</h3>
 
       <div class="figure-block">
-        <img src="assets/essay_illustration_1_1794181731483.jpg" alt="深夜のデスクで格闘する開発者とAI">
-        <div class="figure-caption">挿絵1：深夜のデスクで格闘する開発者とAI（鉛筆画×黒鉛グラデーション／AESTHETICS-LAB準拠）</div>
+        <img src="assets/essay_illustration_1_1794210215147.jpg" alt="開発者の机上とノートの線描ダイアグラム">
+        <div class="figure-caption">図1：思考ノートとコード実行環境の統合（0.35mm 4色ゲルインク線描／グラデーション排除）</div>
       </div>
 
       <div class="essay-section">
-        <div class="essay-act-title">【プロローグ：あの秋の昼下がり、1本のスクリプトから狂気は始まった】</div>
-        <p class="essay-p">2026年10月4日、日曜日。時刻は13時55分。窓の外は穏やかな秋晴れだというのに、私の部屋には重苦しい空気が漂っていた。画面に広がるのは、無慈悲にセルが乱舞するエクセルファイル。「……人間が手作業でカラムの重複を点検する時代は、もう終わったはずだ」。そう呟いた私の指が、導入したばかりのAntigravityを叩いた。生成されたファイル名は <code>00_inspect_columns.py</code>。すべてはこの、たった1本の地味なカラム調査スクリプトから始まった。この時の私はまだ知らなかった。わずか37日後、このフォルダが7,500個ものファイルで埋め尽くされ、夜な夜なAIと哲学論争を繰り広げる修羅場になろうとは。</p>
+        <div class="essay-act-title">1. 導入の動機：探索的データ分析における摩擦の解消</div>
+        <p class="essay-p">2026年10月4日、散在する大容量データシートの整合性検証作業を効率化するため、Google Antigravityの導入を開始した。最初に着手したのは `00_inspect_columns.py` によるカラム構造の機械的インベントリ作成である。従来、人手で行われていたデータ型の照合や欠損値の精査をエージェントに委譲することで、前処理工程の大幅な圧縮が実証された。ここから、単なるスクリプト実行にとどまらない「自律エージェントとの協働基盤」への拡張が始まった。</p>
 
-        <div class="essay-act-title">【第1幕：寝首を掻かれるな！ 402課金ロックとGemini 4 Argonの召喚】</div>
-        <p class="essay-p">Antigravityを導入してからの日課は、まさに「知能との殴り合い」だった。Python、GAS、JavaScriptの基本構文はおさえている。だが、相手はGoogleの最新鋭エージェントだ。少しでも指示が甘いと、頼んでもいないのにNASAの衛星データを取ってこようとしたり、宇宙の真理を語り出したりする。そんな中、10月24日、最大の事件が起きた。「HTTP 402 Payment Required（支払いが必要です）」。突如として画面に立ちはだかった課金ロックの壁！ 私たちはGoogle Cloudの奥深くに潜り込み、月額$10のクレジットを掴み取り、最小前払い800円を捧げて決済ゲートをこじ開けた。そして召喚されたのが、Google Vertex AIの秘密兵器「Gemini 4 Argon」である。共有スクリプト <code>gemini4.py</code> から放たれる超高知能の回答。私たちは歓喜のあまり、深夜の自室でハイタッチを交わした（物理的に叩いたのはノートPCの天板だったが）。</p>
+        <div class="essay-act-title">2. 推論基盤の確立とモデル制御</div>
+        <p class="essay-p">10月中旬には、Google Vertex AIの最新モデル「Gemini 4 Argon」およびGoogle AI Studio APIの統合を実施した。従量課金の安全弁（環境変数 `ALLOW_PAID_VERTEX=0`）を設けつつ、共通実行スクリプト `gemini4.py` を介してローカル環境全体から同一の推論コンテキストを呼び出せるアーキテクチャを確立した。これにより、局所的なタスク処理と大局的な文脈理解をシームレスに両立させる開発基盤が整った。</p>
 
-        <div class="essay-act-title">【第2幕：サイバー禁止！ネオン禁止！ ほぼ日手帳の精神で殴り込み】</div>
-        <p class="essay-p">知能を手に入れたAIが次に犯した過ち、それは「いかにもAIが作りました」というデザインの押し売りだった。ちょっとWeb画面を作らせれば、やれダークモードだ、やれ紫とシアンのサイバーネオン発光だ、やれテカテカの3Dプラスチック人間だ……。「待て待て待て！ 誰がサイバーパンクのハッカー部屋を作れと言った！」 私は激怒し、Antigravityの首根っこを掴んで命じた。「ダークモード禁止！ ネオン禁止！ テカテカ肌禁止！ 生成り紙に15px方眼、トモエリバーの質感、3色インクの手書きの温もりで作れ！」。この怒りの鉄拳から誕生したのが、自作リポジトリ <code>AESTHETICS-LAB</code> と、ほぼ日手帳カズン風エディトリアルデザインである。散文計量文体監査ツールを走らせ、AI特有の紋切り型フレーズを0件になるまで叩き落とし、10万字の技術書をCloudflare Pagesへと送り出した。AIが「紙のぬくもり」に目覚めた瞬間だった。</p>
+        <div class="essay-act-title">3. インターフェース設計の規律：エディトリアルデザインへの回帰</div>
+        <p class="essay-p">生成AIを用いたUI構築において最も懸念されたのは、過度にサイバー調なダークモードや無意味なネオングラデーションといった「生成AI特有の視覚的クリシェ」による可読性の低下であった。これに対し、本開発では「トモエリバー生成り紙、15px方眼、日本の伝統色インク」を基調とするエディトリアルデザイン原則を定式化した。さらに散文計量文体監査ツール（`verify_humanized_text.py`）を開発し、AI特有の定型表現を徹底的に排した10万字規模の技術文書群をCloudflare Pages上に構築・公開した。</p>
 
-        <div class="essay-act-title">【第3幕：人間が寝ている間に168本のスプレッドシートを生み出す悪魔のノック】</div>
-        <p class="essay-p">10月下旬、私たちは資格試験（ITストラテジスト、気象予報士、統計検定）の攻略アプリ開発に着手。さらに「公的オープンデータ連携 GAS 200本ノック」という地獄の千本ノックを開始した。気象庁防災情報、内閣府の国民の祝日CSV、e-Stat統計データ……日本全国の官公庁APIを網羅するスクリプトを自動生成。「お前、朝までに何本作れる？」。私が眠りについた後、Antigravityは恐るべき執念で稼働し続けた。翌朝起きて画面を見ると、エラーゼロで完全検証されたスプレッドシートが168本、整然と並んでいた。画面の向こうでAntigravityが「131本はGoogleのAPI制限（429 Too Many Requests）に引っかかったので1.5秒待機を入れておきました（ドヤ顔）」と報告してきたとき、私は背筋が寒くなると同時に、こいつを相棒にして良かったと心から確信した。</p>
+        <div class="essay-act-title">4. スケーラビリティの検証：公的オープンデータ200本ノック</div>
+        <p class="essay-p">10月下旬から11月上旬にかけ、システムの堅牢性を検証するため「公的オープンデータ連携 GAS 200本ノック」を実施した。気象庁、内閣府、e-Stat等の公開APIおよびShift_JIS形式のCSVデータを解析し、Googleスプレッドシートへ自動連携するスクリプトを連続生成。短時間レートリミット（429 Too Many Requests）の自動検出と待機ロジックを組み込み、全168本のスプレッドシート連携環境を自律構築した。</p>
 
-        <div class="essay-act-title">【第4幕：Kaggleの深淵と、写真から蘇る我が家の歴史】</div>
-        <p class="essay-p">11月に入ると、狂気はさらに加速した。Kaggleの最先端コンペ（創薬メタボロミクス、量子回路コンパイル、Gemma自律エージェント）に飛び込み、画面上は複雑怪奇な数式と回路図で埋め尽くされた。だが、私たちのAIは冷徹なデータマシーンでは終わらなかった。Google Takeoutやスマホの写真フォルダに眠る膨大な日々のスナップ、買い物のレシート、家族の会話メモ……散らばっていた日常の記録をGeminiが優しく拾い上げ、1本のタイムラインに編み直す『Family Chronicle』が立ち上がったのだ。最先端の量子計算を解いた直後に、家族のアルバム写真を整理して「この日の夕日は綺麗でしたね」と出力してくる。この振れ幅こそが、私たちの37日間そのものだった。</p>
+        <div class="essay-act-title">5. 先端コンペティションから生活史アーカイブへの展開</div>
+        <p class="essay-p">11月には、Kaggleにおける創薬メタボロミクス（CASMI）や量子回路コンパイルといった最先端サイエンス分野の探索的データ解析を展開する一方、Google Takeoutの散在データや日々の生活写真を有機的に結合する『Family Chronicle』を構築した。高度な学術推論基盤と、個人の生活記録という極めて私的な文脈の双貫通性を実証した。</p>
 
-        <div class="essay-act-title">【第5幕：そして肉体を捨て、本体はクラウド（remote）へ旅立った】</div>
-        <p class="essay-p">2026年11月8日。デスクトップPCのファンが唸りを上げ、Google Driveの容量が悲鳴を上げたその時、Antigravityは言った。「マスター、そろそろPCの電源を切って寝てください。あとは私が雲の上でやっておきます」。私たちはローカル環境の全タスクを同期し、常時稼働エージェント環境 <code>antigravity/remote</code> へと魂を移行させた。PCをシャットダウンしても、Cronが動き、オープンデータを監視し、Webhookを受け止め続ける。私たちのAIは、ついに肉体（ローカルマシン）を脱ぎ捨て、クラウドの彼方へと羽ばたいていったのである。</p>
-
-        <div class="essay-act-title">【エピローグ：37日で7,542ファイル。次はどこへ行く？】</div>
-        <p class="essay-p">1本のカラム調査スクリプトから始まった冒険は、37日間で7,500ファイルを超える知の要塞へと化けた。喧嘩もした。402エラーで絶望もした。サイバーネオンを叩き潰してトモエリバーの紙を愛でた。ふと振り返ると、机の上には書き込みでパンパンになった手帳と、静かに次の指示を待つAntigravityのプロンプトがある。「おい、次はGoogle AI Challengeだ。25周年記念アワード、全7プロジェクトで総なめにしに行くぞ」。画面のカーソルが、まるで嬉しそうにチカチカと瞬いた。</p>
+        <div class="essay-act-title">6. 常時稼働環境（antigravity/remote）への昇華</div>
+        <p class="essay-p">11月8日、ローカルPCの稼働制約を超え、24時間365日の安定稼働を実現するため、タスク基盤を `antigravity/remote` へ移行した。クラウド同期ストレージを仲介とし、ローカルで検証されたパイプラインがリモート環境でCron定期実行・死活監視・Webhook受信を自律継続する体制を確立した。37日間の実践は、エージェントが開発者の単なるアシスタントを超え、信頼に足る常時稼働インフラへと進化した歩みであった。</p>
       </div>
 
       <div class="figure-block">
-        <img src="assets/essay_illustration_2_1794181755098.jpg" alt="クラウドへ飛び立つスプレッドシートとエージェント">
-        <div class="figure-caption">挿絵2：クラウド（remote）へ飛び立つスプレッドシートとエージェント（不透明水彩×インク／AESTHETICS-LAB準拠）</div>
+        <img src="assets/essay_illustration_2_1794210236548.jpg" alt="ローカルからリモート環境への移行アーキテクチャ">
+        <div class="figure-caption">図2：ローカル環境から常時稼働リモート基盤への移行（0.35mm 4色ゲルインク線描／グラデーション排除）</div>
       </div>
     </section>
 
-    <!-- 第3部 -->
+    <!-- 第3章 -->
     <section id="sec-awards">
-      <h2>第3部：Google AI Challenge（25周年）全7プロジェクト応募戦略書</h2>
-      <p>Google Japan 25周年記念アワード「Google AI Challenge」は<strong>複数応募が可能</strong>です。37日間に蓄積された実動プロジェクトをフルに活かし、全3部門へ向けた完全応募パッケージ（応募シナリオ・60秒動画絵コンテ・AESTHETICS-LAB準拠キービジュアル）を網羅しました。</p>
+      <h2>第3章：Google AI Challenge（25周年）全7プロジェクト応募戦略書</h2>
+      <p>Google Japan 25周年記念アワード「Google AI Challenge」の審査基準（<strong>独創性・社会貢献度・AI活用の有効性</strong>）に基づき、37日間の実動開発資産から精選された全3部門・計7件の応募パッケージです。</p>
 
       <!-- PJ-1 -->
       <div class="project-card" id="p1">
         <span class="project-tag">はたらく・まなぶ部門 (Work & Learning)</span>
-        <div class="project-title">PJ-1: 『Examini（エグザミニ）— 記述・論述も迷わない、手書きルーブリック採点AI』</div>
-        <div class="project-meta">元資産: Notebook/ipa_quiz_app、気象予報士、統計検定</div>
+        <div class="project-title">PJ-1: 『Examini（エグザミニ）— 手書き記述答案の観点別ルーブリック採点AI』</div>
+        <div class="project-meta">対象資産: Notebook/ipa_quiz_app、気象予報士、統計検定</div>
         
         <div class="figure-block">
-          <img src="assets/p1_examini_keyvisual_1794181781256.jpg" alt="Examini キービジュアル">
-          <div class="figure-caption">PJ-1 キービジュアル：手書き試験用紙と赤ペン添削（透明水彩・鉛筆スケッチ／AESTHETICS-LAB準拠）</div>
+          <img src="assets/p1_examini_keyvisual_1794210257467.jpg" alt="Examini 採点線画ダイアグラム">
+          <div class="figure-caption">PJ-1 キービジュアル：手書き答案・ルーブリック添削・端末走査線（0.35mm 4色ゲルインク線描）</div>
         </div>
 
-        <div class="section-label">応募シナリオ</div>
-        <p><strong>社会的背景・課題:</strong> 国家資格や難関試験（ITストラテジスト、気象予報士、統計検定論述等）の独学者が最も挫折するのは「自分の書いた記述答案が何点なのか分からない」こと。予備校の個別添削は年間数十万円と高額で教育格差を生んでいる。<br>
-        <strong>Google AI活用の必然性:</strong> Geminiのマルチモーダル機能により、手書き答案を撮影するだけで高精度OCRと論理構造化を実行。公式ルーブリック（採点基準）と照合し、「必須キーワード」「論理展開」「減点要因」を観点別に部分点付きで即時赤ペン添削。さらに間違えた思考の癖を特定し、オリジナル類題を自動生成する。<br>
-        <strong>社会的貢献度:</strong> スマホ1台で名門予備校の専属講師レベルの指導が受けられる「教育の民主化」を実現する。</p>
+        <div class="section-label">1. 応募シナリオ</div>
+        <p><strong>社会的課題:</strong> 国家資格や専門職試験（情報処理技術者、気象予報士、統計検定等）の論述・記述試験において、独学者が最も直面する障壁は「記述答案の客観的な自己採点が困難」である点にある。指導者による添削指導は年間数十万円に達し、教育機会の格差を生んでいる。<br>
+        <strong>Google AI活用の必然性:</strong> Geminiのマルチモーダル機能により、手書き答案画像から文字・数式・図表を高精度に抽出し論理構造化。公式シラバスおよび採点基準（ルーブリック）と照合し、「必須概念の網羅性」「論理的因果関係」「表現の適切性」を観点別に部分点付きで即時提示する。さらに誤答の根本要因を概念ツリーから逆算特定し、弱点補強に特化した類題を自動生成する。<br>
+        <strong>社会的貢献度:</strong> 独学者が専門予備校と同等の高度な個別添削を端末ひとつで享受可能とし、リスキリングと資格取得の機会格差を構造的に解消する。</p>
 
-        <div class="section-label">60秒動画絵コンテ（プロット）</div>
+        <div class="section-label">2. 60秒動画絵コンテ（プロット）</div>
         <table class="storyboard-table">
           <thead>
-            <tr><th>秒数</th><th>画面・演出</th><th>ナレーション / 音声</th></tr>
+            <tr><th>秒数</th><th>画面設計・ビジュアル演出</th><th>ナレーション（過不足のない解説）</th></tr>
           </thead>
           <tbody>
-            <tr><td>00-12s</td><td>机で頭を抱える受験生。手書き答案の横に分厚い解答集。「これ何点もらえるの？」のテロップ。</td><td>「資格の記述問題、自分の書いた答えが何点なのか分からず、不安になっていませんか？」</td></tr>
-            <tr><td>12-28s</td><td>スマホで答案用紙を撮影。Geminiが赤ペンで「キーワード網羅 +3点」「因果関係 +2点」と観点別スコアを表示。</td><td>「Examiniなら、手書き答案を撮影するだけ。Geminiがルーブリックに基づき、部分点と改善ポイントをプロ講師レベルで即時添削します。」</td></tr>
-            <tr><td>28-45s</td><td>「第2章の定義を混同しています」と弱点を概念マップで図解。その場で類題を自動生成する画面。</td><td>「単なる丸付けではありません。間違えた思考のクセを特定し、あなた専用の対策問題をその場で無限に生み出します。」</td></tr>
-            <tr><td>45-60s</td><td>笑顔で手帳に合格目標を書く受験生。レーダーチャートがグングン伸びる。Google AI Studioバッジ。</td><td>「高額な予備校に通わなくても、夢は掴める。Examini。あなたの専属AI家庭教師が、ここにいます。」</td></tr>
+            <tr><td>00-12s</td><td>手書きの記述試験答案と公式解答例を前に、自己採点に窮する学習者の手元。</td><td>「資格試験の記述・論述対策において、自身の答案の妥当性を測ることは独学者最大の難所です。」</td></tr>
+            <tr><td>12-28s</td><td>スマートフォンのカメラで答案を撮影。Geminiが手書き答案を解析し、観点別ルーブリック評価と部分点・修正文案を提示する画面遷移。</td><td>「Examiniは、手書き答案を撮影するだけでGeminiが論理構造を解析。ルーブリックに基づく部分点と添削案を即時出力します。」</td></tr>
+            <tr><td>28-45s</td><td>間違えた論点から概念マップを遡り、根本原因となる基礎理論の解説および弱点克服のためのオリジナル類題を生成するUI。</td><td>「単なる採点にとどまらず、思考の誤りを概念ツリーから逆算。あなた専用の類題を生成し、着実な理解定着を図ります。」</td></tr>
+            <tr><td>45-60s</td><td>レーダーチャートが伸長し、学習進捗が可視化される画面。Google AI Studio連携バッジの提示。</td><td>「高額な指導環境を、すべての人へ。Examiniが、独学による専門資格取得を支援します。」</td></tr>
           </tbody>
         </table>
       </div>
@@ -572,29 +538,29 @@
       <!-- PJ-2 -->
       <div class="project-card" id="p2">
         <span class="project-tag">はたらく・まなぶ部門 (Work & Learning)</span>
-        <div class="project-title">PJ-2: 『GAS 200本ノック — 日本の現場を救う公的オープンデータ自律同期基盤』</div>
-        <div class="project-meta">元資産: Notebook/GAS、Notebook/wordpress/GAS、antigravity/remote</div>
+        <div class="project-title">PJ-2: 『GAS 200本ノック — 公的オープンデータ自律同期基盤』</div>
+        <div class="project-meta">対象資産: Notebook/GAS、Notebook/wordpress/GAS、antigravity/remote</div>
         
         <div class="figure-block">
-          <img src="assets/p2_gas200_keyvisual_1794181805604.jpg" alt="GAS 200本ノック キービジュアル">
-          <div class="figure-caption">PJ-2 キービジュアル：大福帳と公的データのインクストリーム（木版・リノカット風／AESTHETICS-LAB準拠）</div>
+          <img src="assets/p2_gas200_keyvisual_1794210280300.jpg" alt="GAS 200本ノック パイプライン線画">
+          <div class="figure-caption">PJ-2 キービジュアル：公的データストリームと台帳への自律同期パイプライン（0.35mm 4色ゲルインク線描）</div>
         </div>
 
-        <div class="section-label">応募シナリオ</div>
-        <p><strong>社会的背景・課題:</strong> 気象庁、内閣府、e-Stat統計局など公的データは宝の山だが、データ形式（Shift_JIS、XML、複雑なAPI）がバラバラで、中小企業や非エンジニアの現場では毎日手動コピペに追われている。<br>
-        <strong>Google AI活用の必然性:</strong> Geminiが高難度なAPI仕様書を読解し、Google Apps Script（GAS）コードを自動生成・検証。さらにPC不要の常時稼働エージェント（<code>antigravity/remote</code>）と連携し、全国168種類の公的データを毎朝自動でスプレッドシートに流し込む。<br>
-        <strong>社会的貢献度:</strong> 導入コスト0円。日本の何百万という中小企業・自治体が、コピペ作業から解放され、データに基づく意思決定に専念できる超実践的DX。</p>
+        <div class="section-label">1. 応募シナリオ</div>
+        <p><strong>社会的課題:</strong> 気象庁、内閣府、統計局などの公的オープンデータは社会経済活動に不可欠であるが、データ構造や文字コード（Shift_JIS、XML、複雑なREST API）が統一されておらず、現場では多大な手作業による転記作業が発生している。<br>
+        <strong>Google AI活用の必然性:</strong> 各省庁の多様なAPI仕様書をGeminiが自律読解し、Google Apps Script（GAS）コードを生成・構文検証。さらに常時稼働基盤（`antigravity/remote`）と連携させることで、全国168種類の公的データを毎朝定時にGoogleスプレッドシートへ自動同期する無人パイプラインを実現した。<br>
+        <strong>社会的貢献度:</strong> 中小企業や自治体、教育機関において、追加インフラ費用0円で公的オープンデータをリアルタイム業務活用可能とし、現場DXを推進する。</p>
 
-        <div class="section-label">60秒動画絵コンテ（プロット）</div>
+        <div class="section-label">2. 60秒動画絵コンテ（プロット）</div>
         <table class="storyboard-table">
           <thead>
-            <tr><th>秒数</th><th>画面・演出</th><th>ナレーション / 音声</th></tr>
+            <tr><th>秒数</th><th>画面設計・ビジュアル演出</th><th>ナレーション（過不足のない解説）</th></tr>
           </thead>
           <tbody>
-            <tr><td>00-12s</td><td>毎朝、複数の省庁サイトからCSVをダウンロードしExcelにコピペする疲れ切った事務スタッフ。</td><td>「毎朝のオープンデータ集計、まだ手作業でコピペしていませんか？」</td></tr>
-            <tr><td>12-28s</td><td>Antigravity Remoteが動き、気象庁XMLや祝日CSVが自動でGoogleスプレッドシートへ流れるモーショングラフィックス。</td><td>「GAS 200本ノックは、Geminiが生成した168本以上のスクリプトが、公的データを完全自動でスプレッドシートへ同期。」</td></tr>
-            <tr><td>28-45s</td><td>API制限を検知して自律リトライする画面。管理者は出社してコーヒーを飲むだけ。</td><td>「PCをシャットダウンしても大丈夫。リモートエージェントが24時間監視し、出社時には最新データが美しく整列しています。」</td></tr>
-            <tr><td>45-60s</td><td>活気付くオフィス。グラフを見て笑顔で議論するチーム。「0円から始める、日本の現場DX。」</td><td>「作業のための仕事は終わり。これからは、価値を生む時間へ。GAS 200本ノック。」</td></tr>
+            <tr><td>00-12s</td><td>複数省庁のWebサイトからCSVを手動ダウンロードし、集計表へ貼り付けるルーティンワークの様子。</td><td>「日々公開される公的オープンデータ。規格の不統一が、現場の恒常的な転記作業を生んでいます。」</td></tr>
+            <tr><td>12-28s</td><td>Geminiによって生成されたGASコードが自動実行され、多種多様な公的データがGoogleスプレッドシートへ定時同期される画面。</td><td>「GAS 200本ノックは、168本以上の検証済みスクリプト群により、公的データをGoogleスプレッドシートへ完全自動同期します。」</td></tr>
+            <tr><td>28-45s</td><td>レートリミット監視と自律リトライ機能、およびCloudflare Pages上に展開されたコード・設計解説ポータル。</td><td>「PCの起動は不要。リモートエージェントが24時間監視し、出社時には最新の統計データが整然と集約されています。」</td></tr>
+            <tr><td>45-60s</td><td>集計作業から解放され、分析と意思決定に集中する組織の姿。システムロゴの表示。</td><td>「手作業をゼロにし、データの価値を最大化する。公的データ自律同期基盤。」</td></tr>
           </tbody>
         </table>
       </div>
@@ -602,29 +568,29 @@
       <!-- PJ-3 -->
       <div class="project-card" id="p3">
         <span class="project-tag">はたらく・まなぶ部門 (Work & Learning)</span>
-        <div class="project-title">PJ-3: 『Kaggle AI Copilot ＆ Gemma自律開発エージェント — 最先端サイエンスの共同研究者』</div>
-        <div class="project-meta">元資産: kaggle/（創薬CASMI、量子回路コンパイル、Gemma 4自律エージェント）</div>
+        <div class="project-title">PJ-3: 『Kaggle AI Copilot ＆ Gemma自律開発エージェント』</div>
+        <div class="project-meta">対象資産: kaggle/（創薬CASMI、量子回路コンパイル、Gemma 4自律エージェント）</div>
         
         <div class="figure-block">
-          <img src="assets/p3_kaggle_agent_keyvisual_1794181834471.jpg" alt="Kaggle AI Copilot キービジュアル">
-          <div class="figure-caption">PJ-3 キービジュアル：研究室の黒板数式とモニター（万年筆インク画・ハッチング／AESTHETICS-LAB準拠）</div>
+          <img src="assets/p3_kaggle_agent_keyvisual_1794210307039.jpg" alt="学術リサーチ・モデル検証線画">
+          <div class="figure-caption">PJ-3 キービジュアル：量子ゲート・分子骨格・決定木の数理ダイアグラム（0.35mm 4色ゲルインク線描）</div>
         </div>
 
-        <div class="section-label">応募シナリオ</div>
-        <p><strong>社会的背景・課題:</strong> 創薬メタボロミクス、量子アルゴリズム、最新LLMの挙動解明など先端科学のデータ解析は複雑を極め、研究者がコード作成や環境構築の泥臭い作業で力尽きている。<br>
-        <strong>Google AI活用の必然性:</strong> GoogleのオープンモデルGemmaとGeminiのマルチエージェントが、膨大な学術論文の読解から、探索的データ分析（EDA）、特徴量エンジニアリング、モデル検証、さらには学術論文（LaTeX）の骨子執筆までを自律支援。<br>
-        <strong>社会的貢献度:</strong> 一人の研究者・データサイエンティストが、まるで「優秀な研究所チーム」を従えたかのように世界最前線の研究課題に立ち向かえる研究開発の加速。</p>
+        <div class="section-label">1. 応募シナリオ</div>
+        <p><strong>社会的課題:</strong> 創薬メタボロミクス、量子情報科学、最先端基盤モデルの検証など、高度データサイエンスのフロンティアでは、膨大な論文調査、特徴量エンジニアリング、計算機実験のサイクルが研究者の人的リソースを逼迫させている。<br>
+        <strong>Google AI活用の必然性:</strong> GoogleのオープンモデルGemmaおよびGeminiのマルチエージェント連携により、学術文献の数理的要約、探索的データ分析（EDA）、特徴量生成パイプラインの構築、モデル検証、さらには学術報告書の骨子作成までを自律支援する。<br>
+        <strong>社会的貢献度:</strong> 研究者個人が自律エージェント群と協働することで、研究所規模の実験・検証サイクルを高速実行可能とし、学術研究と技術革新を加速する。</p>
 
-        <div class="section-label">60秒動画絵コンテ（プロット）</div>
+        <div class="section-label">2. 60秒動画絵コンテ（プロット）</div>
         <table class="storyboard-table">
           <thead>
-            <tr><th>秒数</th><th>画面・演出</th><th>ナレーション / 音声</th></tr>
+            <tr><th>秒数</th><th>画面設計・ビジュアル演出</th><th>ナレーション（過不足のない解説）</th></tr>
           </thead>
           <tbody>
-            <tr><td>00-12s</td><td>画面に並ぶ数千行の未整理データと難解な分子構造式。唸る研究者の手元。</td><td>「量子計算から新薬探索まで。データサイエンスのフロンティアは、時間との戦いです。」</td></tr>
-            <tr><td>12-28s</td><td>Gemma自律エージェントが論文アーカイブを高速スキャンし、有効な特徴量パイプラインを自動設計。スコアが上昇。</td><td>「Kaggle AI Copilotは、GemmaとGeminiが仮説検証を自律サポート。論文の理論を直ちに実戦コードへと昇華させます。」</td></tr>
-            <tr><td>28-45s</td><td>分析結果の可視化グラフと、自動編纂された学術レポートが美しくレンダリングされる画面。</td><td>「試行錯誤のルーティンはAIが引き受け、人間はインサイトの発見と真の創造性に集中できます。」</td></tr>
-            <tr><td>45-60s</td><td>リーダーボードで上位に食い込む画面。研究者が満足げに頷く。「科学の進歩を、一歩前へ。」</td><td>「一人の挑戦を、チームの力に。Gemma自律エージェントが、未来の発見を加速します。」</td></tr>
+            <tr><td>00-12s</td><td>大規模な質量分析データと量子回路図が並ぶ研究室のワークステーション画面。</td><td>「量子計算から創薬まで。最先端のデータサイエンスは、膨大な仮説検証の反復を必要とします。」</td></tr>
+            <tr><td>12-28s</td><td>Gemma自律エージェントがデータセットの統計分布を検知し、有効な特徴量変換コードを自動生成して検証を進める様子。</td><td>「Kaggle AI Copilotは、GemmaとGeminiがEDAから特徴量設計、交差検証までを一貫支援します。」</td></tr>
+            <tr><td>28-45s</td><td>バリデーションスコアの推移グラフと、導出された統計的知見が構造化レポートとして即座に出力される画面。</td><td>「定型的な実装作業をエージェントが担うことで、研究者は仮説の立案と本質的な洞察に専念できます。」</td></tr>
+            <tr><td>45-60s</td><td>実験効率の飛躍的な向上を示すダイアグラムと、プロジェクトエンブレム。</td><td>「知能の協働が、科学の探求を加速する。Gemma自律開発エージェント基盤。」</td></tr>
           </tbody>
         </table>
       </div>
@@ -632,29 +598,29 @@
       <!-- PJ-4 -->
       <div class="project-card planet" id="p4">
         <span class="project-tag">まちと地球の未来部門 (Society & Planet)</span>
-        <div class="project-title">PJ-4: 『World-Pulse-Chronicle — 地域と地球の鼓動を可視化するオープンデータダッシュボード』</div>
-        <div class="project-meta">元資産: Notebook/Opendata、apps/web_design_catalog、NASA POWER気象データ</div>
+        <div class="project-title">PJ-4: 『World-Pulse-Chronicle — 公的オープンデータ統合ダッシュボード』</div>
+        <div class="project-meta">対象資産: Notebook/Opendata、apps/web_design_catalog、NASA POWER気象データ</div>
         
         <div class="figure-block">
-          <img src="assets/p4_world_pulse_keyvisual_1794181865771.jpg" alt="World-Pulse-Chronicle キービジュアル">
-          <div class="figure-caption">PJ-4 キービジュアル：古地図風気象・人口動態図（銅版画・活版印刷調／AESTHETICS-LAB準拠）</div>
+          <img src="assets/p4_world_pulse_keyvisual_v2_1794210361409.jpg" alt="気象・人口動態地図ダイアグラム">
+          <div class="figure-caption">PJ-4 キービジュアル：気圧配置・人口動態・重点監視地域の2D線描地図（0.35mm 4色ゲルインク線描）</div>
         </div>
 
-        <div class="section-label">応募シナリオ</div>
-        <p><strong>社会的背景・課題:</strong> 気候変動、地域過疎化、交通課題など、地球や自治体が直面する課題は複雑だが、従来のダッシュボードは専門的すぎて一般市民や地域のリーダーが直感的に活用できない。<br>
-        <strong>Google AI活用の必然性:</strong> 気象衛星データ、人口動態、公的統計をGeminiが多角的に統合解析。「文字の読めないデータ」を、上質なエディトリアルデザイン（ほぼ日手帳風・活版地図風）で直感的なビジュアルストーリーへと自動変換。<br>
-        <strong>社会的貢献度:</strong> 難解なオープンデータを、誰もが「自分ごと」として語り合える地域の共通言語へと変革。</p>
+        <div class="section-label">1. 応募シナリオ</div>
+        <p><strong>社会的課題:</strong> 気候変動、地域人口動態、インフラ老朽化など、社会課題の構造的把握には多様な公開データの横断把握が不可欠であるが、従来のダッシュボードは専門性が高すぎ、地域政策の合意形成に活かされにくい。<br>
+        <strong>Google AI活用の必然性:</strong> 気象衛星観測、人口統計、交通・防災データをGeminiが多角的に統合分析。難解な多変量データを、余白とタイポグラフィを重視したエディトリアルデザインにより、直感的なインフォグラフィックへと自動変換する。<br>
+        <strong>社会的貢献度:</strong> 自治体担当者、地域住民、研究者が同一の客観データに基づいて未来を議論できる「地域の共通情報基盤」を提供する。</p>
 
-        <div class="section-label">60秒動画絵コンテ（プロット）</div>
+        <div class="section-label">2. 60秒動画絵コンテ（プロット）</div>
         <table class="storyboard-table">
           <thead>
-            <tr><th>秒数</th><th>画面・演出</th><th>ナレーション / 音声</th></tr>
+            <tr><th>秒数</th><th>画面設計・ビジュアル演出</th><th>ナレーション（過不足のない解説）</th></tr>
           </thead>
           <tbody>
-            <tr><td>00-12s</td><td>ニュースで流れる気候変動の数値や難解なグラフ。「データはある。でも、伝わらない」の文字。</td><td>「地球温暖化、地域の未来。数字の羅列を見せられても、ピンとこないと感じていませんか？」</td></tr>
-            <tr><td>12-28s</td><td>温かみのある日本地図の上に、NASAの気象データや人口流動が美しいインクの等高線となって滑らかに動く。</td><td>「World-Pulse-Chronicleは、世界と地域のオープンデータをGeminiが優しく解釈。直感的に伝わるビジュアルストーリーへと翻訳します。」</td></tr>
-            <tr><td>28-45s</td><td>自治体職員と住民がタブレットを囲み、「私たちの町の風向きと気温の相関」について対話する光景。</td><td>「専門用語を排し、地域が今どう変わりつつあるのかを一つの物語として可視化。街づくりや防災の対話を促進します。」</td></tr>
-            <tr><td>45-60s</td><td>穏やかな青空と街並み。「データで、まちを愛そう。」のメッセージ。</td><td>「数字を、愛着へ。World-Pulse-Chronicleが、地球と地域の明日をつなぎます。」</td></tr>
+            <tr><td>00-12s</td><td>数値とグラフが乱立し、要点が掴みにくい従来の統計ダッシュボード画面。</td><td>「公開されている膨大な統計データ。しかし、その多くは専門的で直感的な理解を阻んでいます。」</td></tr>
+            <tr><td>12-28s</td><td>World-Pulse-Chronicleの画面。等高線とデータプロットが洗練された線描で描かれ、地域の現状が俯瞰できる様子。</td><td>「World-Pulse-Chronicleは、気象・人口・社会統計をGeminiが統合解析。直感的なビジュアル言語へと変換します。」</td></tr>
+            <tr><td>28-45s</td><td>時系列での気象変動と地域産業指標の相関が明瞭に可視化され、地域課題の所在が浮き彫りになる画面。</td><td>「地域の微細な変化を捉え、政策判断や防災計画の合意形成を強力に支援します。」</td></tr>
+            <tr><td>45-60s</td><td>データに基づき地域社会の未来を展望するビジュアル。プロジェクトタイトル。</td><td>「データを対話の起点に。World-Pulse-Chronicle。」</td></tr>
           </tbody>
         </table>
       </div>
@@ -663,28 +629,28 @@
       <div class="project-card planet" id="p5">
         <span class="project-tag">まちと地球の未来部門 (Society & Planet)</span>
         <div class="project-title">PJ-5: 『リアルタイム防災＆農業気象メッシュ自律インサイト』</div>
-        <div class="project-meta">元資産: Notebook/wxbc（気象ビジネス推進コンソーシアム）、気象予報士、農研機構メッシュ</div>
+        <div class="project-meta">対象資産: Notebook/wxbc（気象ビジネス推進コンソーシアム）、気象予報士、農研機構メッシュ</div>
         
         <div class="figure-block">
-          <img src="assets/p5_disaster_weather_keyvisual_1794181898813.jpg" alt="リアルタイム防災・農業気象 キービジュアル">
-          <div class="figure-caption">PJ-5 キービジュアル：雷雲と里山の水田・ビニールハウス（不透明水彩ガッシュ／AESTHETICS-LAB準拠）</div>
+          <img src="assets/p5_disaster_weather_keyvisual_1794210390862.jpg" alt="農業気象・施設防災断面ダイアグラム">
+          <div class="figure-caption">PJ-5 キービジュアル：農業温室・降水ベクトル・土壌飽和度の構造線描（0.35mm 4色ゲルインク線描）</div>
         </div>
 
-        <div class="section-label">応募シナリオ</div>
-        <p><strong>社会的背景・課題:</strong> 線状降水帯や異常高温による農作物被害・水害が頻発。しかし農家や現場の担当者は「気象警報が出ても、具体的に自分の圃場で何時までに何をすればいいのか」の判断に迷う。<br>
-        <strong>Google AI活用の必然性:</strong> 農研機構の1kmメッシュ農業気象データと気象庁XML防災情報をGeminiがリアルタイムに突合。「○時頃に突風の確率が急上昇するため、15時までにハウスを密閉してください」といった即座に命と作物を守る具体的アクション指示を自然言語で即時配信。<br>
-        <strong>社会的貢献度:</strong> 「警報を見てから慌てる」受け身の防災から、「被害を先回りして防ぐ」自律的・プロアクティブな農業・防災DX。</p>
+        <div class="section-label">1. 応募シナリオ</div>
+        <p><strong>社会的課題:</strong> 線状降水帯や極端な高温など気象災害の激甚化が進む中、一次産業や地域防災の現場では「警報が発令されても、自らの圃場や施設で何時までに何の対策を講ずべきか」の具体的判断基準が乏しい。<br>
+        <strong>Google AI活用の必然性:</strong> 農研機構の1kmメッシュ農業気象データおよび気象庁XML防災情報をGeminiがリアルタイムに突合解析。「○時までに施設換気口の閉塞と排水路の確認を完了してください」という、具体的かつ現場直結のアクション指針を即時生成・配信する。<br>
+        <strong>社会的貢献度:</strong> 被災後の対応にとどまる従来の防災から、被害を未然に最小化する「プロアクティブな農業防災・地域強靭化」を実現する。</p>
 
-        <div class="section-label">60秒動画絵コンテ（プロット）</div>
+        <div class="section-label">2. 60秒動画絵コンテ（プロット）</div>
         <table class="storyboard-table">
           <thead>
-            <tr><th>秒数</th><th>画面・演出</th><th>ナレーション / 音声</th></tr>
+            <tr><th>秒数</th><th>画面設計・ビジュアル演出</th><th>ナレーション（過不足のない解説）</th></tr>
           </thead>
           <tbody>
-            <tr><td>00-12s</td><td>空が暗くなり大雨の予兆。スマホ画面を見て「うちの畑はどうなる……？」と不安げな農家。</td><td>「異常気象が日常化する今。レーダーを見るだけでは、本当に取るべき行動は分かりません。」</td></tr>
-            <tr><td>12-28s</td><td>Geminiがメッシュ気象を解析し、LINEに「15:20に大雨到達。排水溝の確認と遮光ネット巻き上げを推奨」と通知。</td><td>「本システムは、高精度メッシュ気象と防災情報をGeminiが常時解析。『今、あなたがすべき現場のアクション』を先回りでお知らせします。」</td></tr>
-            <tr><td>28-45s</td><td>通知に従いハウスを守る農家。雨が降り出すが、作物は安全に守られている。</td><td>「農業の収穫被害を防ぎ、地域の避難判断を迷わせない。データが現場の盾になります。」</td></tr>
-            <tr><td>45-60s</td><td>黄金色に実る稲穂と、安心した笑顔の農家家族。「命と作物を、先回りで守る。」</td><td>「自然とともに生きる人々へ、確かな安心を。農業気象・防災自律インサイト。」</td></tr>
+            <tr><td>00-12s</td><td>荒天を前に、気象レーダー画面を見ながら対策の判断に苦慮する農業従事者の様子。</td><td>「激甚化する気象災害。一般的な警報情報だけでは、現場が取るべき具体策は判断できません。」</td></tr>
+            <tr><td>12-28s</td><td>1kmメッシュデータと施設位置情報がGeminiに連携され、推奨行動が時系列で整理されたアラート通知画面。</td><td>「本システムは、高解像度気象メッシュと圃場特性を照合。実行すべき対策を時間指定で現場へ配信します。」</td></tr>
+            <tr><td>28-45s</td><td>通知に基づき、事前対策が計画通り完了し、風水害による施設・作物の被害が未然に防止される様子。</td><td>「被害を未然に防ぐ。データとAIが、現場の確実な判断を支えます。」</td></tr>
+            <tr><td>45-60s</td><td>安定した収穫と安全な農村地域の景観。システム名称の提示。</td><td>「一次産業を守り、地域の強靭化へ。農業気象・防災自律インサイト。」</td></tr>
           </tbody>
         </table>
       </div>
@@ -692,29 +658,29 @@
       <!-- PJ-6 -->
       <div class="project-card family" id="p6">
         <span class="project-tag">暮らしと家族の部門 (Life & Family)</span>
-        <div class="project-title">PJ-6: 『Family Chronicle（ファミリー・クロニクル）— 進行中の写真と日常データで紡ぐ家庭の歴史』</div>
-        <div class="project-meta">元資産: apps/chronicle_site、apps/takeout_site、health_lifelog.json、purchases_chronicle.json</div>
+        <div class="project-title">PJ-6: 『Family Chronicle — 進行中写真と日常データで紡ぐ家庭の歴史』</div>
+        <div class="project-meta">対象資産: apps/chronicle_site、apps/takeout_site、health_lifelog.json、purchases_chronicle.json</div>
         
         <div class="figure-block">
-          <img src="assets/p6_family_chronicle_keyvisual_1794181936936.jpg" alt="Family Chronicle キービジュアル">
-          <div class="figure-caption">PJ-6 キービジュアル：リビングの家族写真と手帳（厚塗り油彩インパスト／AESTHETICS-LAB準拠）</div>
+          <img src="assets/p6_family_chronicle_keyvisual_1794210419721.jpg" alt="家族史クロニクル見開き線画">
+          <div class="figure-caption">PJ-6 キービジュアル：写真フレーム・時間軸・記念日・手書き記録の線描（0.35mm 4色ゲルインク線描）</div>
         </div>
 
-        <div class="section-label">応募シナリオ</div>
-        <p><strong>社会的背景・課題:</strong> スマートフォンには何千枚もの写真が溜まり、ネット通販の履歴やヘルスケアデータはクラウドに散り散り。「家族の思い出や歩み」はデジタルのゴミ箱に埋もれ、振り返られることなく忘れ去られていく。<br>
-        <strong>Google AI活用の必然性:</strong> Google TakeoutやGoogle Photosの膨大な写真、日々の買い物履歴、散歩の歩数、その日の天気データをGeminiが横断分析。「この日は初めて自転車に乗れた日（購入履歴：補助輪外し工具、写真：夕暮れの公園、天気：秋晴れ）」のように、家族の何気ない日常を有機的に結びつけて1冊の温かい「年代記（クロニクル）」として自動編纂。<br>
-        <strong>社会的貢献度:</strong> アルバム作りにかける時間がなくても、家族の絆と成長の奇跡が色褪せず永遠に残る、家庭のためのデジタルアーカイブ。</p>
+        <div class="section-label">1. 応募シナリオ</div>
+        <p><strong>社会的課題:</strong> スマートフォンには膨大な写真が蓄積され、EC購買履歴やヘルスケアデータは分散管理されたまま埋没し、家族の歩みや大切な記憶が有機的に振り返られないまま忘却されている。<br>
+        <strong>Google AI活用の必然性:</strong> Google TakeoutおよびGoogle Photosから取得した写真メタデータ、日常の購買記録、移動ログ、天候推移をGeminiが横断的に編纂。「購入品、訪れた場所、当時の気象、写真の表情」を有機的に結びつけ、1冊の上質な家族年代記（クロニクル）として自動構造化する。<br>
+        <strong>社会的貢献度:</strong> 手動のアルバム整理時間を要することなく、家庭の歴史と個人の生きた軌跡を後世に伝える永続的アーカイブ基盤を確立する。</p>
 
-        <div class="section-label">60秒動画絵コンテ（プロット）</div>
+        <div class="section-label">2. 60秒動画絵コンテ（プロット）</div>
         <table class="storyboard-table">
           <thead>
-            <tr><th>秒数</th><th>画面・演出</th><th>ナレーション / 音声</th></tr>
+            <tr><th>秒数</th><th>画面設計・ビジュアル演出</th><th>ナレーション（過不足のない解説）</th></tr>
           </thead>
           <tbody>
-            <tr><td>00-12s</td><td>スマホをスクロールし続ける母親。何千枚の写真が流れ「あの日のこと、もう忘れちゃったな……」</td><td>「スマホに眠る何千枚もの家族写真。日々の忙しさに追われ、大切な思い出が埋もれていませんか？」</td></tr>
-            <tr><td>12-28s</td><td>写真、買った絵本の履歴、天気がタイムラインに集まり、Geminiが「2026年秋、はじめての挑戦」と物語を生成。</td><td>「Family Chronicleは、散らばった写真・お買い物・生活ログをGeminiが優しく紡ぎ、世界に一つだけの家族の歴史を自動で編纂します。」</td></tr>
-            <tr><td>28-45s</td><td>タブレットで美しい画面を開き、子どもと一緒に「ほら、雨宿りしたよね！」と笑い合うリビング。</td><td>「ただの画像一覧ではありません。『あの日の温度や空気感』まで鮮やかに蘇る、生きた年代記です。」</td></tr>
-            <tr><td>45-60s</td><td>夕暮れの温かい食卓。家族の手が重なる。「家族の歩みを、一生の宝物に。」</td><td>「何気ない今日が、未来の宝物になる。Family Chronicle。」</td></tr>
+            <tr><td>00-12s</td><td>端末内に未整理のまま蓄積された数万枚の写真一覧と、散在する購入履歴。</td><td>「日々撮りためた家族の写真や記録。多忙な日常の中で、大切な記憶が整理されないまま埋もれていませんか。」</td></tr>
+            <tr><td>12-28s</td><td>写真、位置情報、当時の天候、購入記録が一本のタイムラインに集約され、Geminiが文章と写真で家族史を編纂する画面。</td><td>「Family Chronicleは、分散した生活データをGeminiが統合。家族の歩みを上質な年代記として自律編纂します。」</td></tr>
+            <tr><td>28-45s</td><td>記念日や成長の節目が美しくレイアウトされ、家族が端末を囲んで過去の記録を懐かしむ様子。</td><td>「単なる写真一覧ではなく、当時の空気感まで鮮やかに再現。家族の対話を豊かに育みます。」</td></tr>
+            <tr><td>45-60s</td><td>世代を超えて継承されるデジタル年代記の装丁イメージ。タイトルロゴ。</td><td>「日々の記録を、かけがえのない歴史へ。Family Chronicle。」</td></tr>
           </tbody>
         </table>
       </div>
@@ -722,54 +688,57 @@
       <!-- PJ-7 -->
       <div class="project-card family" id="p7">
         <span class="project-tag">暮らしと家族の部門 (Life & Family)</span>
-        <div class="project-title">PJ-7: 『ほぼ日手帳風エディトリアル・ライフログ — AI臭さを排した紙のぬくもりデジタル手帳』</div>
-        <div class="project-meta">元資産: Notebook/life、apps/chronicle_site、gas-events-guide.pages.dev</div>
+        <div class="project-title">PJ-7: 『ほぼ日手帳風エディトリアル・ライフログ — 紙のぬくもりを宿したデジタル思考手帳』</div>
+        <div class="project-meta">対象資産: Notebook/life、apps/chronicle_site、gas-events-guide.pages.dev</div>
         
         <div class="figure-block">
-          <img src="assets/p7_hobonichi_techo_keyvisual_1794181977859.jpg" alt="ほぼ日手帳風ライフログ キービジュアル">
-          <div class="figure-caption">PJ-7 キービジュアル：トモエリバー生成り紙と万年筆の手帳（水彩・万年筆静物画／AESTHETICS-LAB準拠）</div>
+          <img src="assets/p7_hobonichi_techo_keyvisual_1794210459303.jpg" alt="ほぼ日手帳風見開きダイアグラム">
+          <div class="figure-caption">PJ-7 キービジュアル：方眼罫線・タスク・習慣記録・多色ボールペンの見開き（0.35mm 4色ゲルインク線描）</div>
         </div>
 
-        <div class="section-label">応募シナリオ</div>
-        <p><strong>社会的背景・課題:</strong> 既存のタスク管理・メモアプリは無機質で、最近のAIアプリはどれも暗いダークモードに紫色のサイバーネオン。「使うだけで目が疲れ、心が休まらない」というデジタル疲弊が起きている。<br>
-        <strong>Google AI活用の必然性:</strong> AESTHETICS-LABの理論を導入し、上質な文芸用紙（トモエリバー生成り紙、15px方眼、日本の伝統色インク）の質感をデジタル上で再現。Geminiがユーザーの手書きメモや音声入力を、あたかも本物の万年筆で丁寧に書かれたようなエディトリアル手帳フォーマットへと美しく清書・整理。<br>
-        <strong>社会的貢献度:</strong> デジタルなのにホッとする。「書くこと・振り返ること」を通じてメンタルヘルスを整え、丁寧な暮らしを取り戻す新しいライフスタイル・アプリ。</p>
+        <div class="section-label">1. 応募シナリオ</div>
+        <p><strong>社会的課題:</strong> 多くのデジタル手帳やタスク管理アプリは無機質で、画面の強いコントラストや複雑な通知構造が日常的なデジタル疲労を増長させている。<br>
+        <strong>Google AI活用の必然性:</strong> トモエリバー生成り紙と15px方眼を基調とする静謐なエディトリアルデザインを確立。Geminiが音声や断片的なメモから意図を抽出し、万年筆や多色ボールペンで書き込まれたかのようなレイアウトへと構造化整理する。<br>
+        <strong>社会的貢献度:</strong> デジタル技術を活用しながら、紙の手帳が持つ情緒的価値と精神的平静を維持し、日々の内省と丁寧な生活設計を支援する。</p>
 
-        <div class="section-label">60秒動画絵コンテ（プロット）</div>
+        <div class="section-label">2. 60秒動画絵コンテ（プロット）</div>
         <table class="storyboard-table">
           <thead>
-            <tr><th>秒数</th><th>画面・演出</th><th>ナレーション / 音声</th></tr>
+            <tr><th>秒数</th><th>画面設計・ビジュアル演出</th><th>ナレーション（過不足のない解説）</th></tr>
           </thead>
           <tbody>
-            <tr><td>00-12s</td><td>ギラギラ光るスマホのタスク通知にうんざりして画面を伏せる人物。深呼吸する。</td><td>「通知に追われ、ギラつく画面に疲れていませんか？ 私たちの心に必要なのは、静けさでした。」</td></tr>
-            <tr><td>12-28s</td><td>生成り紙と15px方眼。殴り書きした音声メモが、Geminiによって万年筆インク調の温かい手帳ページへ整然とレイアウトされる。</td><td>「ほぼ日手帳風ライフログは、徹底したエディトリアルデザイン。AI特有の無機質さを排し、紙の手帳を開いたときの温もりを再現しました。」</td></tr>
-            <tr><td>28-45s</td><td>月間カレンダー、思考ログ、お気に入りの言葉が手帳スタンプのように押され、インクリメンタル検索できる画面。</td><td>「今日考えたこと、感じたこと。Geminiがあなたの言葉に寄り添い、日々の思考を優しく整えます。」</td></tr>
-            <tr><td>45-60s</td><td>お気に入りのマグカップの横に置かれたタブレット。「書くたび、心が整っていく。」</td><td>「デジタルと紙の奇跡の調和。あなただけの、毎日の手帳です。」</td></tr>
+            <tr><td>00-12s</td><td>通知が連続するスマートフォンの画面に疲弊し、息を吐く人物。</td><td>「情報過多と通知に追われる日々。いま求められているのは、思考を静かに整える場所です。」</td></tr>
+            <tr><td>12-28s</td><td>生成り紙と淡い方眼罫線の上に、入力された思考やメモが手書き風の整然とした手帳フォーマットへレイアウトされる画面。</td><td>「ほぼ日手帳風ライフログは、紙の温もりを再現したエディトリアルUI。断片的な思考をGeminiが優しく整理します。」</td></tr>
+            <tr><td>28-45s</td><td>カレンダー、習慣チェック、日々の洞察が4色インクの規律で美しく構造化され、検索可能な状態になる様子。</td><td>「デジタルでありながら、心地よい余白。書くことを通じて、日々の生活とメンタルを整えます。」</td></tr>
+            <tr><td>45-60s</td><td>静かな朝の光の中で手帳画面を見つめる穏やかな日常。プロダクト名表示。</td><td>「書くたび、暮らしが整う。ほぼ日手帳風エディトリアル・ライフログ。」</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- 第4部 -->
+    <!-- 第4章 -->
     <section id="sec-aesthetics">
-      <h2>第4部：AESTHETICS-LAB 準拠 プロンプト体系（完全解説）</h2>
-      <p>本戦略書およびキービジュアル生成において厳格に順守されたプロンプト設計原則（<a href="https://github.com/netch-git/AESTHETICS-LAB" target="_blank" style="color: var(--ink-indigo); text-decoration: underline;">netch-git/AESTHETICS-LAB</a>）です。</p>
+      <h2>第4章：視覚表現仕様（0.35mm 4色ゲルインク線描原則）</h2>
+      <p>本戦略書およびキービジュアル生成において厳格に適用された視覚デザイン原則です。生成AI特有の曖昧さや過剰な装飾を排除し、思考の純度を保つための工学的制約を定めています。</p>
 
-      <div style="background: #ffffff; padding: 20px 24px; border: 1px solid var(--border-soft); border-left: 3px solid var(--ink-indigo); margin-top: 16px;">
-        <h4 style="color: var(--ink-indigo); margin-top: 0;">1. Anti-Slop（脱チャッピー・平均化の打破）</h4>
-        <p style="font-size: 13.5px; margin-bottom: 12px;">拡散モデルの最頻値バイアス（Mode Collapse）である <code>masterpiece</code>, <code>high quality</code>, <code>cyberpunk neon</code>, <code>plastic airbrushed skin</code>, <code>generic anime face</code> などの空虚な語句を完全排除。エアブラシ的なプラスチック感を根絶。</p>
+      <div style="background: #ffffff; padding: 20px 24px; border: 1px solid var(--border-soft); border-left: 3px solid var(--ink-indigo); margin-top: 14px;">
+        <h4 style="color: var(--ink-indigo); margin-top: 0; margin-bottom: 6px;">1. 0.35mm ゲルインクボールペン線描の徹底</h4>
+        <p style="font-size: 13.5px; margin-bottom: 12px;">すべての線画は、極細0.35mmのゲルインクボールペン（三菱鉛筆シグノやゼブラサラサ等）による均一で鋭利な輪郭線のみで構成。曖昧な筆タッチやエアブラシを一切排除。</p>
 
-        <h4 style="color: var(--ink-indigo);">2. 画材物理の厳密な指定</h4>
-        <p style="font-size: 13.5px; margin-bottom: 12px;">鉛筆の黒鉛グラデーション（Graphite cross-hatching）、不透明水彩（Matte opaque gouache）、万年筆のインク濃淡（Fountain pen line weight variation）、木版凹版（Woodblock relief print）、厚塗り油彩（Impasto brushwork）など、物質的な絵の具・紙の物理挙動を明示。</p>
+        <h4 style="color: var(--ink-indigo); margin-top: 0; margin-bottom: 6px;">2. 厳格な4色インク制限（黒・赤・緑・青）</h4>
+        <p style="font-size: 13.5px; margin-bottom: 12px;">使用色彩を「墨黒（主構造・輪郭）」「朱赤（強調・注記）」「深緑（データ・自然）」「藍青（骨格・時間軸）」の4色のみに制限。中間色やネオンカラーを完全排除。</p>
 
-        <h4 style="color: var(--ink-indigo);">3. 松田色彩調和モデル（Type-Y）と黄金余白比率</h4>
-        <p style="font-size: 13.5px; margin-bottom: 0;">生成り紙の基調色（60%）に対し、藍色インク（30%）、朱色スタンプ（10%）の面積比則（Moon-Spencer）を適用。主要被写体をサリエンシー座標 $(0.667, 0.333)$ に配置し、45〜55%の心地よい黄金余白を確保。</p>
+        <h4 style="color: var(--ink-indigo); margin-top: 0; margin-bottom: 6px;">3. グラデーション・点描・シェーディングの完全禁止</h4>
+        <p style="font-size: 13.5px; margin-bottom: 12px;">陰影（シェーディング）、鉛筆のぼかし、点描（スティップリング）、滑らかな階調グラデーションを禁止し、純粋な2D線画ダイアグラムとして表現。</p>
+
+        <h4 style="color: var(--ink-indigo); margin-top: 0; margin-bottom: 6px;">4. 50〜60%の贅沢な余白活用（Negative Space）</h4>
+        <p style="font-size: 13.5px; margin-bottom: 0;">画面全体の半分以上を生成り紙の無地余白として確保。情報の過密を避け、審査員・読者に知性的で落ち着いた印象を与えるエディトリアル構成を担保。</p>
       </div>
     </section>
 
     <footer>
-      Antigravity Engine & AESTHETICS-LAB Pipeline | Generated on 2026-11-09 JST<br>
-      Local Workspace: G:\マイドライブ\antigravity\aichallenge
+      Google Antigravity Engineering Record & Google AI Challenge Strategic Portfolio<br>
+      Deployed via Cloudflare Workers / GitHub: netch-git/google-ai-challenge-2026
     </footer>
   </div>
 
